@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<title>Allegheny Chat</title>
+	<meta charset="UTF-8">
+	<link href="style/style.css" rel="stylesheet">
+	<link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Google_Chat_icon_%282020%29.svg/1964px-Google_Chat_icon_%282020%29.svg.png">
+</head>
+
+<body>
+	<div id = "google">
+		<div id="google_translate_element"></div>
+
+		<script>
+			function googleTranslateElementInit() {
+				new google.translate.TranslateElement(
+					{pageLanguage: 'en'},
+					'google_translate_element'
+				);
+			}
+		</script>
+		
+		<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+	</div>
+	<div id="emojis">
+		<input type="text" value="❤️" id="myInput" readonly="readonly" class="someclass">
+		<button onclick="Hello()">Copy Emoji</button>
+		<script>
+		  function Hello() {
+		  var copyText = document.getElementById('myInput')
+		  copyText.select();
+		  document.execCommand('copy')
+		  console.log('Copied Text')
+		}
+		</script>
+	</div>
+	<main>
+		<div id="chat-container">
+    <div id = "chat-window"></div>
+    <div id = "chat-users"></div>
+    <div id="chatLogin">
+		  <h1>🐴 Hi! To use AlleghenyChat, you need a username!🐴</h1>
+		  <p>Please set one below.</p>
+		  <form id = "nameForm">
+			<label for="nameEntry" title="Username selection" hidden>Username Entry</label>
+			<input type="text" id = "nameEntry">
+			<button id = "setName" type = "button">
+			  &raquo;
+			</button>
+		  </form>
+		</div>
+		
+		<div id="chat-mgmt">
+			<form id = "chatForm" onsubmit="return chat.send(this, 'normal')">
+			  <label for="sendMsg" title="Message entry" hidden>Message Entry</label>
+			  <textarea id = "sendMsg"></textarea>
+			  <button id = "sendBtn">
+				&raquo;
+			  </button>
+			</form>
+		  </div>
+	</div>
+	</main>
+	<div id="version"></div>
+<script src="scripts/client.js"></script>
+</body>
+
+</html>
